@@ -1,11 +1,11 @@
 package application;
 
-import ui.ConsoleUI;
+import controller.MenuController;
 import util.InputUtils;
 
 public class Program {
     public static void main(String[] args) {
-        ConsoleUI.showMenu();
+        MenuController.start();
 
         InputUtils.close();
     }

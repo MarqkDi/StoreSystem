@@ -1,20 +1,71 @@
 package controller;
 
 import ui.ConsoleUI;
+import util.InputUtils;
 
 public class MenuController {
-    public static void processInputMainMenu(int input) {
-        switch(input) {
-            case 1:
-                ConsoleUI.managerMenu();
-                break;
-            case 2:
-                ConsoleUI.clientMenu();
-                break;
-            case 0:
-                break;
-            default:
-                System.out.println("Invalid input!");
-        }
+
+    public static void start() {
+        int option = InputUtils.INVALID_OPTION;
+        do {
+            ConsoleUI.showMainMenu();
+            option = ConsoleUI.askOption();
+            switch (option) {
+                case 1:
+                    managerMenu();
+                    break;
+                case 2:
+                    clientMenu();
+                    break;
+                case 0:
+                case InputUtils.INVALID_OPTION:
+                    break;
+                default:
+                    ConsoleUI.showMessage("Invalid option");
+            }
+        } while (option != 0);
+        ConsoleUI.showMessage("Closing application...");
+    }
+
+    private static void managerMenu() {
+        int option = InputUtils.INVALID_OPTION;
+        do {
+            ConsoleUI.showManagerMenu();
+            option = ConsoleUI.askOption();
+            switch (option) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    ConsoleUI.showMessage("Not implemented yet");
+                    break;
+                case 0:
+                case InputUtils.INVALID_OPTION:
+                    break;
+                default:
+                    ConsoleUI.showMessage("Invalid option");
+            }
+        } while (option != 0);
+        ConsoleUI.showMessage("Returning to main menu...");
+    }
+
+    private static void clientMenu() {
+        int option = InputUtils.INVALID_OPTION;
+        do {
+            ConsoleUI.showClientMenu();
+            option = ConsoleUI.askOption();
+            switch (option) {
+                case 1:
+                case 2:
+                    ConsoleUI.showMessage("Not implemented yet");
+                    break;
+                case 0:
+                case InputUtils.INVALID_OPTION:
+                    break;
+                default:
+                    ConsoleUI.showMessage("Invalid option");
+            }
+        } while (option != 0);
+        ConsoleUI.showMessage("Returning to main menu...");
     }
 }

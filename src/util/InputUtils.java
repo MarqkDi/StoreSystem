@@ -1,20 +1,19 @@
 package util;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputUtils {
 
+    public static final int INVALID_OPTION = -1;
+
     private static final Scanner sc = new Scanner(System.in);
 
     public static int readOption() {
-        while (true) {
-            try {
-                return sc.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input, enter only numbers!");
-                sc.next();
-            }
+        try {
+            return Integer.parseInt(sc.nextLine().trim());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input, enter only numbers!");
+            return INVALID_OPTION;
         }
     }
 
