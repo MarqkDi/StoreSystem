@@ -13,9 +13,9 @@ public class ConsoleUI {
 
     public static void showManagerMenu() {
         System.out.println("------Manager system------");
-        System.out.println("1 - List items in stock");
-        System.out.println("2 - Add items to stock");
-        System.out.println("3 - Delete items from stock");
+        System.out.println("1 - Add items to stock");
+        System.out.println("2 - Delete items from stock");
+        System.out.println("3 - List items in stock");
         System.out.println("4 - Update items from stock");
         System.out.println("0 - Return");
     }
