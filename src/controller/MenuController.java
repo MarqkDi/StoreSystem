@@ -2,10 +2,12 @@ package controller;
 
 import ui.ConsoleUI;
 import util.InputUtils;
+import util.Utils;
 
 public class MenuController {
 
     public static void start() {
+        Utils.initialSetup();
         int option = InputUtils.INVALID_OPTION;
         do {
             ConsoleUI.showMainMenu();
