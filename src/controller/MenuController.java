@@ -1,5 +1,6 @@
 package controller;
 
+import services.StockService;
 import ui.ConsoleUI;
 import util.InputUtils;
 import util.Utils;
@@ -36,6 +37,7 @@ public class MenuController {
             option = ConsoleUI.askOption();
             switch (option) {
                 case 1:
+                    StockService.addProduct();
                 case 2:
                 case 3:
                 case 4:
