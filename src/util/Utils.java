@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Utils {
 
     public static File dataFolder = new File(".", "data");
-    public static File warehouse = new File(dataFolder + "warehouse.csv");
+    public static File warehouse = new File(dataFolder, "warehouse.csv");
 
     public static void initialSetup() {
 

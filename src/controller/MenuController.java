@@ -37,9 +37,12 @@ public class MenuController {
             option = ConsoleUI.askOption();
             switch (option) {
                 case 1:
-                    StockService.addProduct();
+                    InputUtils.askProduct();
+                    break;
                 case 2:
                 case 3:
+                    StockService.listProducts();
+                    break;
                 case 4:
                     ConsoleUI.showMessage("Not implemented yet");
                     break;
@@ -60,6 +63,8 @@ public class MenuController {
             option = ConsoleUI.askOption();
             switch (option) {
                 case 1:
+                    StockService.listProducts();
+                    break;
                 case 2:
                     ConsoleUI.showMessage("Not implemented yet");
                     break;
