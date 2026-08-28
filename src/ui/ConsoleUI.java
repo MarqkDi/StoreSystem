@@ -1,6 +1,9 @@
 package ui;
 
+import jdk.swing.interop.SwingInterOpUtils;
 import util.InputUtils;
+
+import java.sql.SQLOutput;
 
 public class ConsoleUI {
 
@@ -17,6 +20,7 @@ public class ConsoleUI {
         System.out.println("2 - Delete items from stock");
         System.out.println("3 - List items in stock");
         System.out.println("4 - Update items from stock");
+        System.out.println("5 - Reset Stock");
         System.out.println("0 - Return");
     }
 

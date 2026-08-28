@@ -37,14 +37,19 @@ public class MenuController {
             option = ConsoleUI.askOption();
             switch (option) {
                 case 1:
-                    InputUtils.askProduct();
+                    InputUtils.enterProduct();
                     break;
                 case 2:
+                    InputUtils.inputProductName();
                 case 3:
                     StockService.listProducts();
                     break;
                 case 4:
                     ConsoleUI.showMessage("Not implemented yet");
+                    break;
+                case 5:
+                    if (InputUtils.antDumb())
+                        Utils.resetStock();
                     break;
                 case 0:
                 case InputUtils.INVALID_OPTION:

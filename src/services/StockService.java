@@ -14,8 +14,7 @@ public class StockService {
                 bw.write(product.getName() + " , R$" + product.getPrice() + " , " + product.getQuantity());
                 bw.newLine();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         InputUtils.products.clear();
@@ -31,6 +30,30 @@ public class StockService {
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void removeProduct(String productName) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(Utils.warehouse));
+            PrintWriter pw = new PrintWriter(new FileWriter(Utils.warehouse, true));
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+
+                String[] lineSplit = line.split(",");
+                if (lineSplit[0].trim().equalsIgnoreCase(productName)) {
+                    pw.println(line);
+                    pw.flush();
+                }
+            }
+
+            pw.close();
+            br.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
